@@ -15,12 +15,20 @@
  */
 package javabump;
 
+import java.nio.IntBuffer;
 import java.util.stream.IntStream;
 
 public class App {
 
     public static void main(String[] args) {
-        IntStream.range(0, 3).forEach((i) -> System.out.println("WORKING"));
+        IntBuffer intBuffer = (IntBuffer) IntBuffer.allocate(10)
+                .put(111)
+                .put(222)
+                .put(333);
+
+        intBuffer.flip();
+
+        IntStream.range(0, 3).forEach((i) -> System.out.println("WORKING: " + intBuffer.get()));
     }
 
 }
