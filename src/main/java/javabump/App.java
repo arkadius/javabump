@@ -15,12 +15,12 @@
  */
 package javabump;
 
-import java.util.stream.IntStream;
+import java.util.List;
 
 public class App {
 
     public static void main(String[] args) {
-        IntStream.range(0, 3).forEach((i) -> System.out.println("WORKING"));
+        List.of("first", "second").forEach((str) -> System.out.println("WORKING: " + str));
     }
 
 }
